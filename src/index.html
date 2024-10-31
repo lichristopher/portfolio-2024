@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#4F46E5',
+            },
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="min-h-screen font-mono text-gray-300 bg-black">
+    <!-- Header -->
+    <header class="flex items-center justify-between max-w-6xl p-4 mx-auto">
+      <div class="relative">
+        <div
+          class="text-sm text-gray-400 cursor-pointer"
+          onclick="selectText(this)"
+          title="Click to copy"
+        >
+          li.christopher.jr@gmail.com
+        </div>
+        <span
+          class="absolute px-2 py-1 ml-2 text-xs text-green-400 transition-opacity duration-200 -translate-y-1/2 rounded-full opacity-0 left-full top-1/2 bg-green-900/50"
+          id="copyNotification"
+        >
+          Copied!
+        </span>
+      </div>
+      <nav class="space-x-4">
+        <a href="#portfolio" class="text-sm text-gray-400 hover:text-white"
+          >Portfolio</a
+        >
+        <a href="#cv" class="text-sm text-gray-400 hover:text-white">CV</a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white">
+          <i class="fab fa-dribbble"></i>
+        </a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="px-4 py-20 text-center">
+      <div class="max-w-4xl mx-auto">
+        <div class="relative mb-8">
+          <img
+            src="./assets/tenma.webp"
+            alt="Profile"
+            class="w-20 h-20 mx-auto mb-4 bg-gray-700 rounded-full"
+          />
+          <span
+            class="inline-block px-3 py-1 text-sm text-gray-300 bg-gray-800 rounded-full shadow-sm"
+          >
+            Frontend Developer / React Developer
+          </span>
+        </div>
+
+        <h1 class="mb-6 text-4xl font-bold text-white md:text-5xl">
+          Building digital products, brands, and experiences
+        </h1>
+
+        <button
+          class="px-6 py-3 text-white transition-colors rounded-full bg-primary hover:bg-primary/80"
+        >
+          Latest Work
+        </button>
+      </div>
+    </main>
+
+    <!-- Projects -->
+    <section class="max-w-6xl px-4 py-16 mx-auto text-center">
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- Project 1 -->
+        <div class="bg-[#111111] p-8 rounded-lg">
+          <h3 class="mb-4 text-2xl font-bold text-white">Porn Platform</h3>
+          <p class="mb-6 text-gray-400">
+            A full-stack e-commerce solution built with React and Node.js.
+            Features include user authentication, payment processing, and
+            inventory management.
+          </p>
+          <a
+            href="#"
+            class="inline-block px-6 py-3 transition-colors bg-transparent border-2 rounded-full border-primary text-primary hover:bg-primary hover:text-white"
+          >
+            View Project
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-[#111111] p-8 rounded-lg">
+          <h3 class="mb-4 text-2xl font-bold text-white">Porn Site</h3>
+          <p class="mb-6 text-gray-400">
+            An intuitive dashboard for healthcare professionals to monitor
+            patient data and manage appointments using Vue.js and Firebase.
+          </p>
+          <a
+            href="#"
+            class="inline-block px-6 py-3 transition-colors bg-transparent border-2 rounded-full border-primary text-primary hover:bg-primary hover:text-white"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="max-w-4xl px-4 py-20 mx-auto">
+      <h2 class="mb-16 text-3xl font-bold text-center text-white">
+        Technical Skills
+      </h2>
+
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+        <!-- HTML -->
+        <div class="flex flex-col items-center">
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-4 text-orange-500"
+          >
+            <i class="text-4xl fab fa-html5"></i>
+          </div>
+          <span class="font-medium text-white">HTML</span>
+        </div>
+
+        <!-- CSS -->
+        <div class="flex flex-col items-center">
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-4 text-blue-500"
+          >
+            <i class="text-4xl fab fa-css3-alt"></i>
+          </div>
+          <span class="font-medium text-white">CSS</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="flex flex-col items-center">
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-4 text-yellow-400"
+          >
+            <i class="text-4xl fab fa-js"></i>
+          </div>
+          <span class="font-medium text-white">JavaScript</span>
+        </div>
+
+        <!-- React -->
+        <div class="flex flex-col items-center">
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-4 text-cyan-400"
+          >
+            <i class="text-4xl fab fa-react"></i>
+          </div>
+          <span class="font-medium text-white">React</span>
+        </div>
+
+        <!-- Next.js -->
+        <div class="flex flex-col items-center">
+          <div class="flex items-center justify-center w-16 h-16 mb-4">
+            <svg viewBox="0 0 24 24" class="w-12 h-12 fill-current">
+              <path
+                d="M11.5725 0c-.1763 0-.3098.0013-.3584.0067-.0516.0053-.2159.021-.3636.0328-3.4088.3073-6.6017 2.1463-8.624 4.9728C1.1004 6.584.3802 8.3666.1082 10.255c-.0962.659-.108.8537-.108 1.7474s.012 1.0884.108 1.7476c.652 4.506 3.8591 8.2919 8.2087 9.6945.7789.2511 1.6.4223 2.5337.5255.3636.04 1.9354.04 2.299 0 1.6117-.1783 2.9772-.577 4.3237-1.2643.2065-.1056.2464-.1337.2183-.1573-.0188-.0139-.8987-1.1938-1.9543-2.62l-1.919-2.592-2.4047-3.5583c-1.3231-1.9564-2.4117-3.556-2.4211-3.556-.0094-.0026-.0187 1.5787-.0235 3.509-.0067 3.3802-.0093 3.5162-.0516 3.596-.061.115-.108.1618-.2064.2134-.075.0374-.1408.0445-.495.0445h-.406l-.1078-.068a.4383.4383 0 01-.1572-.1712l-.0493-.1056.0053-4.703.0067-4.7054.0726-.0915c.0376-.0493.1174-.1125.1736-.143.0962-.047.1338-.0517.5396-.0517.4787 0 .5584.0187.6827.1547.0353.0377 1.3373 1.9987 2.895 4.3608a10760.433 10760.433 0 004.7344 7.1706l1.9002 2.8782.096-.0633c.8518-.5536 1.7525-1.3418 2.4657-2.1627 1.5179-1.7429 2.4963-3.868 2.8247-6.134.0961-.6591.1078-.854.1078-1.7475 0-.8937-.012-1.0884-.1078-1.7476-.6522-4.506-3.8592-8.2919-8.2087-9.6945-.7672-.2487-1.5836-.42-2.4985-.5232-.169-.0176-1.0835-.0366-1.6123-.037zm4.0685 7.217c.3473 0 .4082.0053.4857.047.1127.0562.204.1642.237.2767.0186.061.0234 1.3653.0186 4.3044l-.0067 4.2175-.7436-1.14-.7461-1.14v-3.066c0-1.982.0093-3.0963.0234-3.1502.0375-.1313.1196-.2346.2323-.2955.0961-.0494.1313-.054.4997-.054z"
+              />
+            </svg>
+          </div>
+          <span class="font-medium text-white">Next.js</span>
+        </div>
+
+        <!-- Terminal -->
+        <div class="flex flex-col items-center">
+          <div class="flex items-center justify-center w-16 h-16 mb-4">
+            <i class="text-4xl fas fa-terminal"></i>
+          </div>
+          <span class="font-medium text-white">Terminal</span>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="max-w-4xl px-4 py-20 mx-auto">
+      <h2 class="mb-16 text-3xl font-bold text-center text-white">
+        Collaborate with brands and agencies<br />
+        to create impactful results
+      </h2>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <!-- UX & UI -->
+        <div class="text-center">
+          <div class="mb-4">
+            <i class="text-4xl text-gray-300 fas fa-layer-group"></i>
+          </div>
+          <h3 class="mb-2 font-bold text-white">UX & UI</h3>
+          <p class="text-sm text-gray-400">
+            Creating user-centric interfaces that are intuitive, efficient, and
+            enjoyable to use.
+          </p>
+        </div>
+
+        <!-- Web & Mobile -->
+        <div class="text-center">
+          <div class="mb-4">
+            <i class="text-4xl text-gray-300 fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="mb-2 font-bold text-white">Web & Mobile App</h3>
+          <p class="text-sm text-gray-400">
+            Building responsive solutions with modern technologies and best
+            practices.
+          </p>
+        </div>
+
+        <!-- Design -->
+        <div class="text-center">
+          <div class="mb-4">
+            <i class="text-4xl text-gray-300 fas fa-pencil-ruler"></i>
+          </div>
+          <h3 class="mb-2 font-bold text-white">Design & Creative</h3>
+          <p class="text-sm text-gray-400">
+            Crafting visual designs that connect with your audience and enhance
+            your brand.
+          </p>
+        </div>
+
+        <!-- Development -->
+        <div class="text-center">
+          <div class="mb-4">
+            <i class="text-4xl text-gray-300 fas fa-code"></i>
+          </div>
+          <h3 class="mb-2 font-bold text-white">Development</h3>
+          <p class="text-sm text-gray-400">
+            Implementing solutions using the latest technology and digital
+            trends.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this before </body> -->
+    <script>
+      function selectText(element) {
+        const text = element.textContent;
+        const notification = document.getElementById('copyNotification');
+
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            // Show notification
+            notification.classList.remove('opacity-0');
+
+            // Hide notification after 1 second
+            setTimeout(() => {
+              notification.classList.add('opacity-0');
+            }, 1000);
+          })
+          .catch((err) => {
+            console.error('Failed to copy text: ', err);
+          });
+      }
+    </script>
+  </body>
+</html>
