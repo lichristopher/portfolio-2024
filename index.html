@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital Portfolio</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./src/assets/icons/favicon.ico"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,10 +37,12 @@
   </head>
   <body class="min-h-screen font-mono text-gray-300 bg-black">
     <!-- Header -->
-    <header class="flex items-center justify-between max-w-6xl p-4 mx-auto">
-      <div class="relative">
+    <header
+      class="flex flex-col items-center justify-between max-w-6xl p-4 mx-auto md:flex-row"
+    >
+      <div class="relative mb-4 md:mb-0">
         <div
-          class="text-sm text-gray-400 cursor-pointer"
+          class="hidden text-sm text-gray-400 cursor-pointer md:block"
           onclick="selectText(this)"
           title="Click to copy"
         >
@@ -48,25 +55,158 @@
           Copied!
         </span>
       </div>
-      <nav class="space-x-4">
+      <nav class="hidden space-x-4 md:flex">
         <a href="#portfolio" class="text-sm text-gray-400 hover:text-white"
           >Portfolio</a
         >
         <a href="#cv" class="text-sm text-gray-400 hover:text-white">CV</a>
         <a href="#" class="text-sm text-gray-400 hover:text-white">
-          <i class="fab fa-linkedin"></i>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="inline"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
         </a>
         <a href="#" class="text-sm text-gray-400 hover:text-white">
-          <i class="fab fa-dribbble"></i>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="inline"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path
+              d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"
+            ></path>
+          </svg>
         </a>
         <a href="#" class="text-sm text-gray-400 hover:text-white">
-          <i class="fab fa-instagram"></i>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="inline"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
         </a>
+      </nav>
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-gray-400 hover:text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            id="menuIcon"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav
+        id="mobileMenu"
+        class="flex-col items-center hidden w-full mt-4 space-y-4 md:hidden"
+      >
+        <a href="#portfolio" class="text-sm text-gray-400 hover:text-white"
+          >Portfolio</a
+        >
+        <a href="#cv" class="text-sm text-gray-400 hover:text-white">CV</a>
+        <div class="flex space-x-4">
+          <a href="#" class="text-sm text-gray-400 hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="text-sm text-gray-400 hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path
+                d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"
+              ></path>
+            </svg>
+          </a>
+          <a href="#" class="text-sm text-gray-400 hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
       </nav>
     </header>
 
     <!-- Hero Section -->
-    <main class="px-4 py-20 text-center">
+    <main class="px-4 py-10 text-center md:py-20">
       <div class="max-w-4xl mx-auto">
         <div class="relative mb-8">
           <img
@@ -88,7 +228,7 @@
         <button
           class="px-6 py-3 text-white transition-colors rounded-full bg-primary hover:bg-primary/80"
         >
-          Latest Work
+          Hire me uwu <span class="text-lg text-red-500">❤</span>
         </button>
       </div>
     </main>
@@ -98,11 +238,11 @@
       <div class="grid gap-8 md:grid-cols-2">
         <!-- Project 1 -->
         <div class="bg-[#111111] p-8 rounded-lg">
-          <h3 class="mb-4 text-2xl font-bold text-white">Porn Platform</h3>
+          <h3 class="mb-4 text-2xl font-bold text-white">Movie App</h3>
           <p class="mb-6 text-gray-400">
-            A full-stack e-commerce solution built with React and Node.js.
-            Features include user authentication, payment processing, and
-            inventory management.
+            A dynamic movie browsing application built with React. Features
+            include movie search, detailed film information, user ratings,
+            watchlist management, and integration with popular movie databases.
           </p>
           <a
             href="#"
@@ -114,10 +254,13 @@
 
         <!-- Project 2 -->
         <div class="bg-[#111111] p-8 rounded-lg">
-          <h3 class="mb-4 text-2xl font-bold text-white">Porn Site</h3>
+          <h3 class="mb-4 text-2xl font-bold text-white">
+            League of Legends Stats Site
+          </h3>
           <p class="mb-6 text-gray-400">
-            An intuitive dashboard for healthcare professionals to monitor
-            patient data and manage appointments using Vue.js and Firebase.
+            A comprehensive League of Legends statistics tracker built with
+            React. Features include match history analysis, champion performance
+            metrics, and real-time game data integration via Riot Games API.
           </p>
           <a
             href="#"
@@ -275,6 +418,22 @@
           .catch((err) => {
             console.error('Failed to copy text: ', err);
           });
+      }
+
+      function toggleMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+          menuIcon.innerHTML =
+            '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+          menuIcon.innerHTML =
+            '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
+        }
       }
     </script>
   </body>
